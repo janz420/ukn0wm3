@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 destruct() {
     SCRIPT_PATH="$(realpath "$0")"
     rm -f "$SCRIPT_PATH"
