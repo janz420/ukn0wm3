@@ -489,6 +489,18 @@ elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
     input text "$PASSWORD"
     sleep 2
 
+    echo Continue
+    input tap 350 950
+    sleep 2
+
+    echo Continue
+    input tap 350 1420
+    sleep 2
+
+    echo Save
+    input tap 350 1420
+    sleep 2
+
 
     echo Enabling Mobile Data
     settings put global airplane_mode_on 0 > /dev/null
