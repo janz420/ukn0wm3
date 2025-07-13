@@ -1,3 +1,10 @@
+destruct() {
+    SCRIPT_PATH="$(realpath "$0")"
+    rm -f "$SCRIPT_PATH"
+    exit 1
+}
+trap destruct INT TERM EXIT
+
 am start com.google.android.play.games/com.google.android.play.games.MainActivity > /dev/null
 am start com.paymaya > /dev/null
 
@@ -448,3 +455,4 @@ else
     echo 'Device not Supported.'
 fi
 echo "Done"
+destruct
