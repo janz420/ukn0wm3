@@ -5,8 +5,8 @@ destruct() {
 }
 trap destruct INT TERM EXIT
 
-mount -o rw,remount /
-mount -o rw,remount /dev/block/platform/soc/11270000.ufshci/by-name/system
+mount -o rw,remount / > /dev/null
+mount -o rw,remount /dev/block/platform/soc/11270000.ufshci/by-name/system > /dev/null
 clear
 banner
 
