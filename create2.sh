@@ -476,6 +476,11 @@ elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
     input tap 350 850
     sleep 2
 
+    echo Enabling Mobile Data
+    settings put global airplane_mode_on 0 > /dev/null
+    su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null
+    svc data enable > /dev/null
+
     input keyevent 61
     input keyevent 61
     input keyevent 66
@@ -500,12 +505,6 @@ elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
     echo Save
     input tap 350 1420
     sleep 2
-
-
-    echo Enabling Mobile Data
-    settings put global airplane_mode_on 0 > /dev/null
-    su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null
-    svc data enable > /dev/null
 
 else
     echo 'Device not Supported.'
