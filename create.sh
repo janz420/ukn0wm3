@@ -366,6 +366,80 @@ elif [[ "$screen_size" == "Physical size: 1080x2246" ]]; then
     su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null
     svc data enable > /dev/null
 
+elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
+    echo Enabling Airplane Mode
+    settings put global airplane_mode_on 1 > /dev/null
+    #su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true > /dev/null
+    am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true > /dev/null
+    svc data disable > /dev/null
+
+    am start com.google.android.play.games/com.google.android.play.games.MainActivity > /dev/null
+    pm clear com.paymaya > /dev/null
+    pm clear com.paymaya > /dev/null
+    pm clear com.paymaya > /dev/null
+    pm clear com.paymaya > /dev/null
+    pm clear com.paymaya > /dev/null
+
+    echo Setting up...
+    input tap 888 375
+    sleep 3
+    input tap 888 375
+    sleep 3
+    input tap 888 375
+    sleep 3
+    input tap 888 375
+    sleep 3
+
+    input tap 540 375
+    sleep 5
+
+    echo Opening PayMaya...
+    monkey -p com.paymaya -c android.intent.category.LAUNCHER 1
+    sleep 4
+
+    echo Clicking Get Started
+    input tap 365 965
+    sleep 2
+
+    echo Clicking Continue Twice
+    input tap 350 1250
+    sleep 2
+    input tap 350 1420
+    sleep 2
+
+    echo Granting Permission
+    input tap 350 1420
+    sleep 2
+
+    echo Granting Permission
+    input tap 350 1420
+    sleep 2
+
+    echo Granting Permission
+    input tap 350 1000
+    sleep 2
+
+    echo Clicking Start Account
+    input tap 350 1150
+    sleep 2
+
+    #echo Typing first name
+    #input tap 470 1901
+    input keyevent 61
+    input keyevent 66
+    sleep 2
+    input text "$first_name"
+    sleep 2
+
+    input keyevent 61
+    input keyevent 66
+    sleep 2
+    input text "$last_name"
+
+    echo Clicking continue
+    sleep 2
+    input tap 350 850
+
 else
     echo 'Device not Supported.'
 fi
