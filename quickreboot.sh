@@ -1,10 +1,10 @@
+#!/bin/sh
 destruct() {
     SCRIPT_PATH="$(realpath "$0")"
     rm -f "$SCRIPT_PATH"
     exit 1
 }
 trap destruct INT TERM EXIT
-#!/bin/sh
 while true; do
   echo "QuickReboot & ClearCache Application..."
   echo "___________________________________________"
