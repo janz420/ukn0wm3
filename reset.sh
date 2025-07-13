@@ -292,13 +292,13 @@ wipegms() {
                 }
 
 modpeson &>/dev/null
-echo -ne "${R} + ${N}" "${N}====================${N}" '(25%)\r'
+echo -ne "${R} ✓ ${N}" "${N}▇▇▇▇▇▇▇▇▇▇▇▇${N}" '(25%)\r'
 delete &>/dev/null
-echo -ne "${R} + ${N}" "${N}=============================${N}" '(50%)\r'
+echo -ne "${R} ✓ ${N}" "${N}▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇${N}" '(50%)\r'
 wipedata &>/dev/null
-echo -ne "${R} + ${N}" "${N}=====================================${N}" '(75%)\r'
+echo -ne "${R} ✓ ${N}" "${N}▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇${N}" '(75%)\r'
 wipegms &>/dev/null
-echo -ne "${R} + ${N}" "${N}==============================================${N}" '(100%)\n'
+echo -ne "${R} ✓ ${N}" "${N}▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇${N}" '(100%)\n'
 sleep 1
 
 echo -e "${G}             ======TIMEPICK SELESAI======             ${N}"
@@ -402,10 +402,10 @@ cp "$SCRIPTS_FILE" /data/adb/modules/magisk-drm-disabler/system.prop
 mount -o ro,remount /
 }
 
-Reset2() {
+resik²() {
 clear
 banner
-echo -e "${V}Reset2${Bl}"
+echo -e "${V}Resik²${Bl}"
 su -c rm -rf /data/system/graphicsstats
 su -c rm -rf /data/system/users/0/settings_ssaid.xml.fallback
 su -c rm -rf /data/system/users/0/app_idle_stats.xml
@@ -499,11 +499,11 @@ rm -rf /data/system/usagestats/*
 rm -rf /data/tombstones/*
 rm -rf /data/*.log
 rm -rf /data/log/*
-echo -e "${Y}DONE${G}"
+echo -e "${Y}OKEE${G}"
 }
 
 delprop
 systemprop
 sleep 0.3
 clear
-Reset2
+resik²
