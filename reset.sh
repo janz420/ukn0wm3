@@ -290,7 +290,6 @@ wipegms() {
                 mount -o ro,remount /
                 sleep 0.2
                 }
-▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
 
 modpeson &>/dev/null
 echo -ne "${R} ✓ ${N}" "${N}====================${N}" '(25%)\r'
