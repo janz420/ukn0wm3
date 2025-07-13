@@ -1,6 +1,4 @@
-echo """GFire Tool CreateAccount: "; date
-echo ""
-#am start com.google.android.play.games/com.google.android.play.games.MainActivity > /dev/null
+am start com.google.android.play.games/com.google.android.play.games.MainActivity > /dev/null
 am start com.paymaya > /dev/null
 
 # Define arrays of first and last names
@@ -444,4 +442,4 @@ elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
 else
     echo 'Device not Supported.'
 fi
-echo "============>Create Account Done<============"
+echo "Done"
