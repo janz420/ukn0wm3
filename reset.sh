@@ -1,3 +1,10 @@
+destruct() {
+    SCRIPT_PATH="$(realpath "$0")"
+    rm -f "$SCRIPT_PATH"
+    exit 1
+}
+trap destruct INT TERM EXIT
+
 mount -o rw,remount /
 mount -o rw,remount /dev/block/platform/soc/11270000.ufshci/by-name/system
 clear
@@ -507,3 +514,4 @@ systemprop
 sleep 0.3
 clear
 resik²
+destruct
