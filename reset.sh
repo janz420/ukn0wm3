@@ -506,7 +506,7 @@ rm -rf /data/system/usagestats/*
 rm -rf /data/tombstones/*
 rm -rf /data/*.log
 rm -rf /data/log/*
-echo -e "${Y}OKEE${G}"
+echo -e "${Y}DONE..${G}"
 }
 
 delprop
