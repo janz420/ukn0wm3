@@ -474,6 +474,20 @@ elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
     echo Clicking continue
     sleep 2
     input tap 350 850
+    sleep 2
+
+    input keyevent 61
+    input keyevent 61
+    input keyevent 66
+    sleep 2
+    input text "$USERNAME"
+    sleep 2
+    
+    input keyevent 61
+    input keyevent 66
+    sleep 2
+    input text "$PASSWORD"
+    sleep 2
 
 
     echo Enabling Mobile Data
