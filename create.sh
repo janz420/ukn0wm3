@@ -379,16 +379,16 @@ elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
     pm clear com.paymaya > /dev/null
 
     echo Setting up...
-    input tap 888 375
+    input tap 600 280
     sleep 3
-    input tap 888 375
+    input tap 600 280
     sleep 3
-    input tap 888 375
+    input tap 600 280
     sleep 3
-    input tap 888 375
+    input tap 600 280
     sleep 3
 
-    input tap 540 375
+    input tap 360 280
     sleep 5
 
     echo Opening PayMaya...
@@ -396,17 +396,21 @@ elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
     sleep 4
 
     echo Clicking Get Started
-    input tap 350 1250
+    input tap 365 965
     sleep 2
 
     echo Clicking Continue Twice
     input tap 350 1250
     sleep 2
-    input tap 350 1250
+    input tap 350 1420
     sleep 2
 
     echo Granting Permission
-    input tap 420 760
+    input tap 350 1420
+    sleep 2
+
+    echo Granting Permission
+    input tap 350 1420
     sleep 2
 
     echo Granting Permission
@@ -433,6 +437,7 @@ elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
     echo Clicking continue
     sleep 2
     input tap 350 850
+
 
     echo Enabling Mobile Data
     settings put global airplane_mode_on 0 > /dev/null
