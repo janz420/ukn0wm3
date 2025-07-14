@@ -231,26 +231,50 @@ elif [[ "$screen_size" == "Physical size: 1080x2460" ]]; then
     input tap 504 1821
     sleep 3
 
-    echo Typing first name
-    input tap 501 967
-    sleep 3.5
+    input keyevent 61
+    input keyevent 66
+    sleep 2
     input text "$first_name"
+    sleep 2
 
-    echo Typing last name
-    sleep 3.5
-    input tap 501 1175
-    input tap 501 1175
-    sleep 3.5
+    input keyevent 61
+    input keyevent 66
+    sleep 2
     input text "$last_name"
 
     echo Clicking continue
-    sleep 3.5
+    sleep 2
     input tap 501 1360
 
     echo Enabling Mobile Data
     settings put global airplane_mode_on 0 > /dev/null
     su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null
     svc data enable > /dev/null
+
+    input keyevent 61
+    input keyevent 61
+    input keyevent 66
+    sleep 2
+    input text "$USERNAME"
+    sleep 2
+    
+    input keyevent 61
+    input keyevent 66
+    sleep 2
+    input text "$PASSWORD"
+    sleep 2
+
+    echo Continue
+    input tap 540 1450
+    sleep 2
+
+    echo Continue
+    input tap 540 2200
+    sleep 2
+
+    echo Save
+    input tap 540 2200
+    sleep 2
 
 elif [[ "$screen_size" == "Physical size: 1080x2160" ]]; then
     echo Enabling Airplane Mode
