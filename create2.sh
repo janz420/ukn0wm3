@@ -269,6 +269,7 @@ elif [[ "$screen_size" == "Physical size: 1080x2460" ]]; then
 
     echo Continue
     input tap 540 2200
+    input tap 540 2200
     sleep 2
 
     echo Save
