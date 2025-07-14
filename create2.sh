@@ -252,7 +252,6 @@ elif [[ "$screen_size" == "Physical size: 1080x2460" ]]; then
     svc data enable > /dev/null
 
     input keyevent 61
-    input keyevent 61
     input keyevent 66
     sleep 2
     input text "$USERNAME"
