@@ -15,7 +15,7 @@ while getopts "u:p:" opt; do
   case $opt in
     u) USERNAME="$OPTARG" ;;
     p) PASSWORD="$OPTARG" ;;
-    *) echo "Usage: $0 -u <username> -p <password>" >&2
+    *) #echo "Usage: $0 -u <username> -p <password>" >&2
        exit 1
        ;;
   esac
@@ -23,8 +23,8 @@ done
 
 # Check if required arguments are provided
 if [ -z "$USERNAME" ] || [ -z "$PASSWORD" ]; then
-  echo "Error: Both username (-u) and password (-p) are required."
-  echo "Usage: $0 -u <username> -p <password>"
+  #echo "Error: Both username (-u) and password (-p) are required."
+  #echo "Usage: $0 -u <username> -p <password>"
   exit 1
 fi
 
