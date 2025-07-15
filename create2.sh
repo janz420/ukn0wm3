@@ -96,7 +96,7 @@ last_names=(
 
 # Generate a random first and last name with suffixes
 first_name="${first_names[$RANDOM % ${#first_names[@]}]} ${first_names[$RANDOM % ${#first_names[@]}]} ${first_names[$RANDOM % ${#first_names[@]}]}"
-last_name="${last_names[$RANDOM % ${#last_names[@]}]}${last_names[$RANDOM % ${#last_names[@]}]}"
+last_name="${last_names[$RANDOM % ${#last_names[@]}]} ${last_names[$RANDOM % ${#last_names[@]}]}"
 
 # // Checking if Supported.
 
@@ -157,16 +157,15 @@ if [[ "$screen_size" == "Physical size: 1080x2400" ]]; then
     input tap 539 1794
     sleep 3
 
-    echo Typing first name
-    input tap 501 967
-    sleep 3.5
+    input keyevent 61
+    input keyevent 66
+    sleep 2
     input text "$first_name"
+    sleep 2
 
-    echo Typing last name
-    sleep 3.5
-    input tap 501 1175
-    input tap 501 1175
-    sleep 3.5
+    input keyevent 61
+    input keyevent 66
+    sleep 2
     input text "$last_name"
 
     echo Clicking continue
@@ -327,16 +326,15 @@ elif [[ "$screen_size" == "Physical size: 1080x2160" ]]; then
     input tap 550 1640
     sleep 3
 
-    echo Typing first name
-    input tap 182 747
-    sleep 3.5
+    input keyevent 61
+    input keyevent 66
+    sleep 2
     input text "$first_name"
+    sleep 2
 
-    echo Typing last name
-    sleep 3.5
-    input tap 110 1000
-    input tap 110 1000
-    sleep 3.5
+    input keyevent 61
+    input keyevent 66
+    sleep 2
     input text "$last_name"
 
     echo Clicking continue
@@ -402,15 +400,14 @@ elif [[ "$screen_size" == "Physical size: 1080x2246" ]]; then
     input tap 524 1633
     sleep 2
 
-    echo Typing first name
-    input tap 470 1901
+    input keyevent 61
+    input keyevent 66
     sleep 2
     input text "$first_name"
-
-    echo Typing last name
     sleep 2
-    input tap 510 1096
-    input tap 510 1096
+
+    input keyevent 61
+    input keyevent 66
     sleep 2
     input text "$last_name"
 
@@ -418,11 +415,35 @@ elif [[ "$screen_size" == "Physical size: 1080x2246" ]]; then
     sleep 2
     input tap 525 1210
 
-
     echo Enabling Mobile Data
     settings put global airplane_mode_on 0 > /dev/null
     su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null
     svc data enable > /dev/null
+
+    input keyevent 61
+    input keyevent 61
+    input keyevent 66
+    sleep 2
+    input text "$USERNAME"
+    sleep 2
+    
+    input keyevent 61
+    input keyevent 66
+    sleep 2
+    input text "$PASSWORD"
+    sleep 2
+
+    echo Continue
+    input tap 525 1210
+    sleep 2
+
+    echo Continue
+    input tap 550 1945
+    sleep 2
+
+    echo Save
+    input tap 550 1945
+    sleep 2
 
 elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
     echo Enabling Airplane Mode
