@@ -471,7 +471,8 @@ elif [[ "$screen_size" == "Physical size: 1080x2246" ]]; then
     settings put global airplane_mode_on 0 > /dev/null
     su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null
     svc data enable > /dev/null
-
+    
+    input keyevent 61
     input keyevent 61
     input keyevent 66
     sleep 2
