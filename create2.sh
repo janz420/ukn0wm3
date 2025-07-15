@@ -171,6 +171,7 @@ if [[ "$screen_size" == "Physical size: 1080x2400" ]]; then
     echo Clicking continue
     sleep 3.5
     input tap 501 1360
+    sleep 2
 
     echo Enabling Mobile Data
     settings put global airplane_mode_on 0 > /dev/null
@@ -233,7 +234,7 @@ elif [[ "$screen_size" == "Physical size: 1080x2460" ]]; then
     echo Clicking Allow
     input tap 536 2135
 
-   echo Clicking Get Started
+    echo Clicking Get Started
     input tap 533 2363
     sleep 3
 
@@ -269,7 +270,8 @@ elif [[ "$screen_size" == "Physical size: 1080x2460" ]]; then
     echo Clicking continue
     sleep 2
     input tap 501 1360
-
+    sleep 2
+    
     echo Enabling Mobile Data
     settings put global airplane_mode_on 0 > /dev/null
     su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null
@@ -365,7 +367,7 @@ elif [[ "$screen_size" == "Physical size: 1080x2160" ]]; then
     echo Clicking continue
     sleep 3.5
     input tap 535 1115
-
+    sleep 2
 
     echo Enabling Mobile Data
     settings put global airplane_mode_on 0 > /dev/null
@@ -463,6 +465,7 @@ elif [[ "$screen_size" == "Physical size: 1080x2246" ]]; then
     echo Clicking continue
     sleep 2
     input tap 525 1210
+    sleep 2
 
     echo Enabling Mobile Data
     settings put global airplane_mode_on 0 > /dev/null
