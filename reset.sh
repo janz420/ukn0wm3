@@ -334,7 +334,7 @@ mount -o rw,remount /dev/block/platform/soc/c0c4000.sdhci/by-name/vendor
 mkdir /data/local/tmp
 dirs=/data/local/tmp/system.prop
 dirmat=/data/adb/modules/MagiskHidePropsConf/system.prop
-MOD1=("Infinix X6833B" "Infinix X678B" "Infinix X6710" "Infinix X685C") #"M2010J19CG" "M2007J20CG" "M2102J20SG"
+MOD1=("M2010J19CG" "M2007J20CG" "M2102J20SG") #"Infinix X6833B" "Infinix X678B" "Infinix X6710" "Infinix X685C"
 MOD=${MOD1[$RANDOM % ${#MOD1[@]} ]}
 hs="cndgdlbpdu0c-140-$(head -3 /dev/urandom | tr -cd '0-9' | cut -c -2)"
 clear
