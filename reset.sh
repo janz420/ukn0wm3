@@ -330,7 +330,7 @@ rm r /data/adb/modules/Siluman/system.prop
 
 systemprop() {
 mount -o rw,remount /
-mount -o rw,remount /dev/block/platform/soc/c0c4000.sdhci/by-name/vendor
+mount -o rw,remount /dev/block/platform/soc/11270000.ufshci/by-name/vendor #c0c4000.sdhci
 mkdir /data/local/tmp
 dirs=/data/local/tmp/system.prop
 dirmat=/data/adb/modules/MagiskHidePropsConf/system.prop
