@@ -5,8 +5,8 @@ destruct() {
 }
 trap destruct INT TERM EXIT
 
-mount -o rw,remount / > /dev/null
-mount -o rw,remount /dev/block/platform/soc/11270000.ufshci/by-name/system > /dev/null
+mount -o rw,remount /
+mount -o rw,remount /dev/block/platform/soc/7824900.sdhci/by-name/system
 clear
 banner
 
@@ -86,6 +86,8 @@ am kill
 
 wipedata() {
 mount -o rw,remount /
+am force-stop com.fufufu.katrina.backup
+pm clear com.fufufu.katrina.backup
 am force-stop com.android.location.fused
 pm clear com.android.location.fused
 am force-stop com.paymaya
@@ -128,6 +130,8 @@ am force-stop
 pm clear
 
 #browser
+am force-stop com.fufufu.katrina.backup
+pm clear com.fufufu.katrina.backup
 am force-stop com.google.android.fufufu.deviceid
 pm clear com.google.android.fufufu.deviceid
 am force-stop com.chrome.beta
@@ -250,6 +254,7 @@ wipegms() {
         if [ ! -d /data/data/com.google.android.gms ]; then
             echo -e "${G}-----<>${G}" "${RGB}GAPPS TIDAK TERINSTALL${RGB}"
             else
+            su -c am force-stop com.fufufu.katrina.backup
             su -c am force-stop com.android.location.fused
             su -c am force-stop com.google.android.gm
             su -c am force-stop com.google.android.apps.photosgo
@@ -334,7 +339,7 @@ mount -o rw,remount /dev/block/platform/soc/c0c4000.sdhci/by-name/vendor
 mkdir /data/local/tmp
 dirs=/data/local/tmp/system.prop
 dirmat=/data/adb/modules/MagiskHidePropsConf/system.prop
-MOD1=("M2010J19CG" "M2007J20CG" "M2102J20SG") #"Infinix X6833B" "Infinix X678B" "Infinix X6710" "Infinix X685C"
+MOD1=("M2010J19CG" "M2007J20CG" "M2102J20SG")
 MOD=${MOD1[$RANDOM % ${#MOD1[@]} ]}
 hs="cndgdlbpdu0c-140-$(head -3 /dev/urandom | tr -cd '0-9' | cut -c -2)"
 clear
@@ -374,7 +379,7 @@ clear
 N0=$(head -3 /dev/urandom | tr -cd '4-9' | cut -c -1)
 N1=("Redmi Note $N0")
 FURANDOM=$(head -3 /dev/urandom | tr -cd 'A-Z' | cut -c -1)$(head -3 /dev/urandom | tr -cd 'aeiou' | cut -c -1)$(head -3 /dev/urandom | tr -cd 'bcdfghjklmnpqrstvwxyz' | cut -c -1)$(head -3 /dev/urandom | tr -cd 'aeiou' | cut -c -1)$(head -3 /dev/urandom | tr -cd 'bcdfghjklmnpqrstvwxyz' | cut -c -1)$(head -3 /dev/urandom | tr -cd 'aeiou' | cut -c -1)
-FUBTNAME=$(grep -n bluetooth_name /data/system/users/0/settings_secure.xml | grep -o 'value=".*"*' | cut -d '"' -f2)
+FUBTNAME=$(grep -n bluetooth_name /data/system/users/0/settings_secure.xml | grep -o 'value=".*"*' | cut -d '"' -f2)      
 FUBTNAMEFB=$(grep -n bluetooth_name /data/system/users/0/settings_secure.xml.fallback | grep -o 'value=".*"*' | cut -d '"' -f2)
 FUDVNAME=$(grep -n device_name /data/system/users/0/settings_global.xml | grep -o 'value=".*"*' | cut -d '"' -f2)
 FUDVNAMEFB=$(grep -n device_name /data/system/users/0/settings_global.xml.fallback | grep -o 'value=".*"*' | cut -d '"' -f2)
@@ -506,7 +511,7 @@ rm -rf /data/system/usagestats/*
 rm -rf /data/tombstones/*
 rm -rf /data/*.log
 rm -rf /data/log/*
-echo -e "${Y}DONE..${G}"
+echo -e "${Y}OKEE${G}"
 }
 
 delprop
@@ -514,4 +519,5 @@ systemprop
 sleep 0.3
 clear
 resik²
+
 destruct
