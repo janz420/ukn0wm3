@@ -1,0 +1,4 @@
+    echo Enabling Mobile Data
+    settings put global airplane_mode_on 0 > /dev/null
+    su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null
+    svc data enable > /dev/null
