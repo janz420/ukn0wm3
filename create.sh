@@ -6,7 +6,6 @@ destruct() {
 trap destruct INT TERM EXIT
 
 am start com.google.android.play.games/com.google.android.play.games.MainActivity > /dev/null
-am start com.paymaya > /dev/null
 
 # Define arrays of first and last names
 first_names=(
@@ -47,7 +46,32 @@ first_names=(
     "Paula" "Peter" "Peyton" "Philip" "Phoebe" "Rachael" "Ralph" "Randy" "Rebecca" "Reed"
     "Riley" "Robert" "Robin" "Rochelle" "Roderick" "Roger" "Roland" "Rosa" "Rose" "Ruth"
     "Ryan" "Sadie" "Sally" "Sam" "Samantha" "Samuel" "Sandra" "Sandy" "Sarah" "Savannah" "Scott"
-    "Sean" "Shane" "Shannon" "Sharon"
+    "Sean" "Shane" "Shannon" "Sharon" "Latoya" "Osborn" "Faith" "Farmer" "Lawanda" "Stanton"
+    "Dorothea""Hutchinson" "Christi" "Rivas" "Cornelia" "Lin" "onda" "Frederick" "Katina" "Kirk"
+    "Bernadette" "Harding" "Lois" "Phelps" "Tina" "Nixon" "Kristi" "Christian" "Reba" "Haynes"
+    "Kellie" "Garrison" "Mia" "Walsh" "Leanna" "Daugherty" "Corinne" "Faulkner" "Essie" "Wu"
+    "Myrtle" "Warner" "Beatrice" "Moses" "Elvira" "Wilkins" "Teri" "Rowe" "Milagros" "Kelley"
+    "Lourdes" "Howe" "Christy" "Mayo" "Bonita" "Lambert" "Elsie" "Johnston" "Marylou"
+    "Genevieve" "Good" "Monica" "Trevino" "Ada" "Patrick" "Virgie" "Sanders" "Abby"
+    "Marissa" "Hicks" "Young" "Hughes" "Ginger" "Villarreal" "Katelyn" "Powers"
+    "Ella" "Hart" "Tracie" "Webster" "Valerie" "Barnett" "Velma" "Lynch" "Myra"
+    "Krista" "Graham" "Jacqueline" "Maynard" "Nola" "Donaldson" "Iris" "Ashley"
+    "Virginia" "Pruitt" "Lenore" "Ward" "Courtney" "Blankenship"
+    "Sophie" "Hicks" "Latasha" "Gilbert" "Brenda" "Pugh"
+    "Concetta" "Ritter" "Hilda" "Colon" "Kendra" "Barnett"
+    "Sheila" "Dunlap" "Earlene" "Wolfe" "Erma" "Arellano" "Helene" "Arnold"
+    "Juliet" "Booth" "Alma" "Morse" "Maude" "Gates"
+    "Margaret" "Mclean" "Toni" "Bernard" "Maggie" "Hodges"
+    "Della" "Anderson" "Mercedes" "Martinez"
+    "Tammi" "Heath" "Ida" "Dawson" "Kathryn" "Casey" "Dina" "Bishop"
+    "Lora" "Alexander" "Ruby" "Davidson" "Mariana" "Henry"
+    "Bridgette" "Solomon" "Kelley" "Cole" "Diana" "Fisher"
+    "Kitty" "Golden" "Tisha" "Coleman" "Belinda" "Willis"
+    "Elisa" "Gonzalez" "Katrina" "Hardin" "Mabel" "Chung"
+    "Andrea" "Arias" "Freida" "Estes" "Briana" "Stafford"
+    "Alba" "Bright" "Myrtle" "Sheppard" "Corine" "Cobb"
+    "Myra" "Bolton" "Jasmine" "Randolph" "Alyssa" "Zhang" "Cheri" "Frederick"
+    "Danielle" "Haynes" "Milagros" "Cardenas" "Bertha" "Campbell"
 )
 
 last_names=(
@@ -62,12 +86,38 @@ last_names=(
     "Martinez" "Mendoza" "Mercado" "Morales" "Navarro" "Natividad" "Nunez" "Ocampo" "Olivarez" "Ong"
     "Panganiban" "Pascual" "Pineda" "Quinto" "Ramos" "Reyes" "Rico" "Rivera" "Rodriguez" "Romero"
     "Santos" "Serrano" "Sison" "Sison" "Tan" "Teehankee" "Tiongson" "Torres" "Tungol" "Valdez"
-    "Vargas" "Villaruel" "Villanueva" "Yap" "Yap" "Zaragoza"
+    "Vargas" "Villaruel" "Villanueva" "Yap" "Yap" "Zaragoza" "Latoya" "Osborn" "Faith" "Farmer" "Lawanda" "Stanton"       
+    "Dorothea""Hutchinson" "Christi" "Rivas" "Cornelia" "Lin" "onda" "Frederick" "Katina" "Kirk"
+    "Bernadette" "Harding" "Lois" "Phelps" "Tina" "Nixon" "Kristi" "Christian" "Reba" "Haynes"
+    "Kellie" "Garrison" "Mia" "Walsh" "Leanna" "Daugherty" "Corinne" "Faulkner" "Essie" "Wu"
+    "Myrtle" "Warner" "Beatrice" "Moses" "Elvira" "Wilkins" "Teri" "Rowe" "Milagros" "Kelley"
+    "Lourdes" "Howe" "Christy" "Mayo" "Bonita" "Lambert" "Elsie" "Johnston" "Marylou"
+    "Genevieve" "Good" "Monica" "Trevino" "Ada" "Patrick" "Virgie" "Sanders" "Abby"
+    "Marissa" "Hicks" "Young" "Hughes" "Ginger" "Villarreal" "Katelyn" "Powers"
+    "Ella" "Hart" "Tracie" "Webster" "Valerie" "Barnett" "Velma" "Lynch" "Myra"
+    "Krista" "Graham" "Jacqueline" "Maynard" "Nola" "Donaldson" "Iris" "Ashley"
+    "Virginia" "Pruitt" "Lenore" "Ward" "Courtney" "Blankenship"
+    "Sophie" "Hicks" "Latasha" "Gilbert" "Brenda" "Pugh"
+    "Concetta" "Ritter" "Hilda" "Colon" "Kendra" "Barnett"
+    "Sheila" "Dunlap" "Earlene" "Wolfe" "Erma" "Arellano" "Helene" "Arnold"
+    "Juliet" "Booth" "Alma" "Morse" "Maude" "Gates"
+    "Margaret" "Mclean" "Toni" "Bernard" "Maggie" "Hodges"
+    "Della" "Anderson" "Mercedes" "Martinez"
+    "Tammi" "Heath" "Ida" "Dawson" "Kathryn" "Casey" "Dina" "Bishop"
+    "Lora" "Alexander" "Ruby" "Davidson" "Mariana" "Henry"
+    "Bridgette" "Solomon" "Kelley" "Cole" "Diana" "Fisher"
+    "Kitty" "Golden" "Tisha" "Coleman" "Belinda" "Willis"
+    "Elisa" "Gonzalez" "Katrina" "Hardin" "Mabel" "Chung"
+    "Andrea" "Arias" "Freida" "Estes" "Briana" "Stafford"
+    "Alba" "Bright" "Myrtle" "Sheppard" "Corine" "Cobb"
+    "Myra" "Bolton" "Jasmine" "Randolph" "Alyssa" "Zhang" "Cheri" "Frederick"
+    "Danielle" "Haynes" "Milagros" "Cardenas" "Bertha" "Campbell"
+
     )
 
 # Generate a random first and last name with suffixes
 first_name="${first_names[$RANDOM % ${#first_names[@]}]} ${first_names[$RANDOM % ${#first_names[@]}]} ${first_names[$RANDOM % ${#first_names[@]}]}"
-last_name="${last_names[$RANDOM % ${#last_names[@]}]}${last_names[$RANDOM % ${#last_names[@]}]}"
+last_name="${last_names[$RANDOM % ${#last_names[@]}]}"
 
 # // Checking if Supported.
 
@@ -311,13 +361,13 @@ elif [[ "$screen_size" == "Physical size: 1080x2246" ]]; then
     pm clear com.paymaya > /dev/null
 
     echo Setting up...
-    input tap 600 280
+    input tap 888 375
     sleep 3
-    input tap 600 280
+    input tap 888 375
     sleep 3
-    input tap 600 280
+    input tap 888 375
     sleep 3
-    input tap 600 280
+    input tap 888 375
     sleep 3
 
     input tap 540 375
@@ -371,88 +421,8 @@ elif [[ "$screen_size" == "Physical size: 1080x2246" ]]; then
     su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null
     svc data enable > /dev/null
 
-elif [[ "$screen_size" == "Physical size: 720x1600" ]]; then
-    echo Enabling Airplane Mode
-    settings put global airplane_mode_on 1 > /dev/null
-    #su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true > /dev/null
-    am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true > /dev/null
-    svc data disable > /dev/null
-
-    am start com.google.android.play.games/com.google.android.play.games.MainActivity > /dev/null
-    pm clear com.paymaya > /dev/null
-    pm clear com.paymaya > /dev/null
-    pm clear com.paymaya > /dev/null
-    pm clear com.paymaya > /dev/null
-    pm clear com.paymaya > /dev/null
-
-    echo Setting up...
-    input tap 600 280
-    sleep 3
-    input tap 600 280
-    sleep 3
-    input tap 600 280
-    sleep 3
-    input tap 600 280
-    sleep 3
-
-    input tap 360 280
-    sleep 5
-
-    echo Opening PayMaya...
-    monkey -p com.paymaya -c android.intent.category.LAUNCHER 1
-    sleep 4
-
-    echo Clicking Get Started
-    input tap 365 965
-    sleep 2
-
-    echo Clicking Continue Twice
-    input tap 350 1250
-    sleep 2
-    input tap 350 1420
-    sleep 2
-
-    echo Granting Permission
-    input tap 350 1420
-    sleep 2
-
-    echo Granting Permission
-    input tap 350 1420
-    sleep 2
-
-    echo Granting Permission
-    input tap 350 1000
-    sleep 2
-
-    echo Clicking Start Account
-    input tap 350 1150
-    sleep 2
-
-    #echo Typing first name
-    #input tap 470 1901
-    input keyevent 61
-    input keyevent 66
-    sleep 2
-    input text "$first_name"
-    sleep 2
-
-    input keyevent 61
-    input keyevent 66
-    sleep 2
-    input text "$last_name"
-
-    echo Clicking continue
-    sleep 2
-    input tap 350 850
-
-
-    echo Enabling Mobile Data
-    settings put global airplane_mode_on 0 > /dev/null
-    su -c am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null
-    svc data enable > /dev/null
-
 else
     echo 'Device not Supported.'
 fi
-echo "Done"
+echo "============>Create Account Done<============"
 destruct
