@@ -23,6 +23,7 @@ iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 # Rate limit new connections
 iptables -A INPUT -p tcp --dport 80 -m connlimit --connlimit-above 60 -j DROP
 iptables -A INPUT -p tcp --dport 443 -m connlimit --connlimit-above 60 -j DROP
+iptables -A INPUT -p tcp --dport 1234 -m connlimit --connlimit-above 60 -j DROP
 
 # SYN flood protection
 iptables -A INPUT -p tcp --syn -m limit --limit 1/s --limit-burst 3 -j ACCEPT
