@@ -13,6 +13,7 @@ banner
 modpeson(){
 settings put global airplane_mode_on 1
 am broadcast -a android.intent.action.AIRPLANE_MODE
+settings put global airplane_mode_on 1 && am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true
 }
 delete(){
 am force-stop com.fufufu.katrina.backup
