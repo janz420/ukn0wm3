@@ -10,14 +10,13 @@ mount -o rw,remount /dev/block/platform/soc/7824900.sdhci/by-name/system
 clear
 banner
 
-settings put global airplane_mode_on 1
-am broadcast -a android.intent.action.AIRPLANE_MODE
-
 modpeson(){
 settings put global airplane_mode_on 1
 am broadcast -a android.intent.action.AIRPLANE_MODE
 }
 delete(){
+settings put global airplane_mode_on 1
+am broadcast -a android.intent.action.AIRPLANE_MODE
 am force-stop com.fufufu.katrina.backup
 am force-stop com.android.location.fused
 am force-stop com.paymaya
