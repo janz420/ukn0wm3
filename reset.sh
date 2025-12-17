@@ -15,8 +15,6 @@ settings put global airplane_mode_on 1
 am broadcast -a android.intent.action.AIRPLANE_MODE
 }
 delete(){
-settings put global airplane_mode_on 1
-am broadcast -a android.intent.action.AIRPLANE_MODE
 am force-stop com.fufufu.katrina.backup
 am force-stop com.android.location.fused
 am force-stop com.paymaya
